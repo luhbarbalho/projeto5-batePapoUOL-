@@ -15,30 +15,17 @@
 <body>
     <header>
         <div class="topo">
-            <img src="./media/batepapo-chat.jpeg" alt="batepapo-img">
-            <ion-icon class="icon-people" name="people"></ion-icon>
+            <button onclick="entrarCHAT()"><img src="./media/batepapo-chat.jpeg" alt="batepapo-img"></button>
+            <button onclick="participantes()"><ion-icon class="icon-people" name="people"></ion-icon></button>
         </div>
     </header>
 
     <main>
-        <div class="chat">
-            <div class="mensagens status">
-                <p class="tempo">(00:00:00)</p>
-                <p class="nome">João:</p>
-                <p class="mensagem"> textinho maroto de paquera</p>
-            </div>
-            <div class="mensagens reservada">
-                <p class="tempo">(00:00:00)</p>
-                <p class="nome">João:</p>
-                <p class="mensagem"> textinho maroto de paquera</p>
-            </div>
-            <div class="mensagens normal">
-                <p class="tempo">(00:00:00)</p>
-                <p class="nome">João:</p>
-                <p class="mensagem"> textinho maroto de paquera</p>
-            </div>
-        </div>
+        <div class="chat" style="overflow:auto"></div>
     </main>
+    <div>
+
+    </div>
 
     <footer>
         <div class="abaixo">
@@ -46,12 +33,13 @@
                 <input type="text" id="mensagem" placeholder="Escreva aqui...">
             </div>
             <div class="send">
-                <button><ion-icon class="icon-send" name="paper-plane-outline"></ion-icon></button>
+                <button onclick="envioMensagem ()"><ion-icon class="icon-send" name="paper-plane-outline"></ion-icon></button>
             </div>
         </div>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
