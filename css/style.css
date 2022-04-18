@@ -7,13 +7,26 @@
     box-sizing: border-box;
 }
 
+/* Hide scrollbar*/
+body::-webkit-scrollbar  {
+    display: none; /*Chrome, Safari and Opera */
+}
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 p {
     font-family: Roboto;
     font-weight: 300;
     font-size: 14px;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+
 
 header {
+    margin: none;
+    padding-top: none;
     width: 100vw;
     height: 80px;
     display: flex;
@@ -21,14 +34,30 @@ header {
     box-shadow: 0px 4px 10px 0px #00000025;
     z-index: 1;
     position: fixed;
+    top: 0;
+    right: 0;
     background-color: white;
 }
 
-header .icon-people {
-    color: black;
-    font-size: 42px;
+.botao {
+    width: 56px;
+    height: 45px;
     cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    top: 25px;
+    background-color: white;
+    border: none;
+    z-index: 4;/***************************************************/
+    transition: all 1s;
 }
+
+.icon-people {
+    font-size: 42px;
+    color: black;
+    z-index: 2;/***************************************************/
+}
+
 
 .topo {
     display: flex;
@@ -44,17 +73,16 @@ header .icon-people {
 }
 
 main {
-    padding: 106px 0 90px 0;
     width: 100vw;
     height: 90vh;
     background-color: #ebebeb;
-    overflow: scroll;
 
 }
 
 .chat {
-
     background-color: #ebebeb;
+    padding-top: 75px;
+    padding-bottom: 80px;
 }
 
 .mensagens {
@@ -102,6 +130,7 @@ footer {
     position: fixed;
     z-index: 1;
     bottom: 0;
+    right: 0;
 }
 
 .abaixo{
@@ -113,9 +142,19 @@ footer {
 
 }
 
+.escreva {
+    max-height: 65px;
+}
+
+.escreva p {
+    padding: 0 10px;
+    margin-top: 6px;
+    color: rgb(110, 110, 110);
+}
+
 .escreva input {
     width: 77vw;
-    height: 65px;
+    height: 35px;
     border: none;
     cursor: text;
     font-size: 16px;
@@ -139,4 +178,185 @@ footer {
     border: none;
     background-color: white;
     cursor: pointer;
+}
+
+.dark-bkg { /*tem algo errado com a transicao, quando clica no sidebar*/
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: -100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 1s;
+}
+
+.on {
+    top: 0;
+    left: 0;
+    transition: 1s;
+}
+
+.sidebar {
+    width: 259px;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    right: -40%;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+.show-menu {
+    right: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 225px;
+    margin-right: 0;
+    padding-right: 0;
+    font-family: Roboto, sans-serif;
+}
+
+nav h3 {
+    text-align: center;
+    width: 190px;
+    font-size: 16px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+/*nav .sidebarTop {
+    width: 225px;
+    padding-left: 18px;
+    list-style: none;
+}*/
+
+.sidebarTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebarBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.align {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 180px;
+    height: 30px;
+    margin-bottom: 6px;
+
+}
+
+.align:hover {
+    cursor: pointer;
+}/* ele aponta em toda a area*/
+
+.align .sidebarIcon {
+    margin-right: 8.5px;
+}
+
+.nomes-pessoas {
+    display: flex;
+    flex-direction: column;
+}
+
+.alinhar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alinhando {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check-none {
+    display: none;
+}
+
+.check {
+    display: flex;
+    color: #28BB25;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tela-inicial {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.imgUOL {
+    width: 130px;
+    height: 92px;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.conteudo-inicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    width: 261px;
+    height: 54px;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    cursor: text;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: black;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.conteudo-inicial ::-webkit-input-placeholder {
+    color: rgba(54, 54, 54, 0.685);
+    font-weight: 300;
+}
+
+.botao-entrada {
+    width: 109px;
+    height: 45px;
+    border: none;
+    border-radius: 9px;
+    background-color: #E7E7E7;
+    color: #696969;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+}
+
+.tela-escondida {
+    display: none;
 }

@@ -13,21 +13,77 @@
     <title>Bate Papo UOL</title>
 </head>
 <body>
-    <header>
+    <header class="tirar tela-escondida">
         <div class="topo">
-            <button onclick="entrarCHAT()"><img src="./media/batepapo-chat.jpeg" alt="batepapo-img"></button>
-            <button onclick="participantes()"><ion-icon class="icon-people" name="people"></ion-icon></button>
+            <img src="./media/batepapo-chat.jpeg" alt="batepapo-img">
+            <button class="botao" onclick="participantes()"><ion-icon class="icon-people" name="people"></ion-icon></button>
         </div>
     </header>
 
-    <main>
+    <div class="dark-bkg" onclick="participantes()"></div>
+
+    <aside class="sidebar tirar tela-escondida">
+
+        <nav>
+
+            <div class="sidebarTop">
+                <h3>Escolha um contato para enviar mensagem:</h3>
+
+                <div class="lista-pessoas">
+                    <div onclick="escolherTodos()" class="todos">
+                        <div class="alinhando">
+                            <div class="align">
+                                <ion-icon class="sidebarIcon" name="people"></ion-icon>
+                                <p>Todos</p>
+                            </div>
+
+                            <ion-icon class="checkinho check-none" name="checkmark"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="nomes-pessoas"></div>
+
+                </div>
+            </div>
+
+            <div class="sidebarBottom">
+                <h3>Escolha a visibilidade:</h3>
+
+                <div class="visibilidadeEscolha">
+                    <div onclick="VisibilidadePublica()" class="publico align">
+                        <ion-icon class="sidebarIcon" name="lock-open"></ion-icon>
+                        <p>Público</p>
+                    </div>
+                    <div onclick="VisibilidadePrivada()" class="privado align">
+                        <ion-icon class="sidebarIcon" name="lock-closed"></ion-icon>
+                        <p>Privado</p>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+
+    </aside>
+
+    <div class="tela-inicial">
+
+            <img class="imgUOL" src="./media/batepapo-chat.jpeg" alt="batepapo-img">
+            <div class="conteudo-inicial">
+                <input type="text" id="login" placeholder="Digite seu nome">
+                <button class="botao-entrada" onclick="entrarCHAT()">Entrar</button>
+            </div>
+
+
+    </div>
+
+    <main class="tirar tela-escondida">
         <div class="chat" style="overflow:auto"></div>
     </main>
     <div>
 
     </div>
 
-    <footer>
+    <footer class="tirar tela-escondida">
         <div class="abaixo">
             <div class="escreva">
                 <input type="text" id="mensagem" placeholder="Escreva aqui...">
